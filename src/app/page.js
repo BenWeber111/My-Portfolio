@@ -164,53 +164,42 @@ export default function Home() {
 
       {/* Projects Section */}
       <section id="projects" className="py-20 px-10 bg-[#0a0a0a]">
-        <h3 className="text-3xl font-bold mb-12 text-center">
-          Featured Projects
-        </h3>
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold mb-12 border-l-4 border-orange-500 pl-4">
+            Featured Projects
+          </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {[
-            {
-              title: "Road Hazard Alert System",
-              desc: "Community-based mobile app for real-time hazard detection.",
-              img: "/project1.jpg",
-            },
-            {
-              title: "MTN RAN Planning",
-              desc: "Radio Access Network optimization and cell site analysis.",
-              img: "/project2.jpg",
-            },
-            {
-              title: "Plastic Recycling Initiative",
-              desc: "Converting plastic waste into consumer commodities.",
-              img: "/project3.jpg",
-            },
-          ].map((proj, i) => (
-            <div
-              key={i}
-              className="group bg-[#1a1a1a] rounded-2xl border border-gray-800 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-orange-500 hover:shadow-[0_0_20px_rgba(249,115,22,0.2)]"
-            >
-              {/* Project Image */}
-              <div className="relative h-48 w-full overflow-hidden">
-                <Image
-                  src={proj.img}
-                  alt={proj.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-
-              {/* Project Content */}
-              <div className="p-6">
-                <h4 className="text-xl font-bold mb-2 group-hover:text-orange-500 transition-colors">
+          <div className="space-y-12">
+            {[
+              {
+                title: "MTN RAN Planning & Optimization",
+                details:
+                  "Focused on Radio Access Network (RAN) performance, utilizing Google Earth for site placement and azimuth analysis. Analyzed signal propagation and network evolution paths (GSM/3G/4G) to improve coverage density and reduce dropped calls in high-traffic sectors.",
+              },
+              {
+                title: "Road Hazard Alert System",
+                details:
+                  "Developed a community-driven cloud-based alert system for the Abeka area. Integrated real-time data ingestion with AI to detect and report road hazards, reducing response times for local authorities through cloud-based communication protocols.",
+              },
+              {
+                title: "Personal Home Network Lab (Cisco)",
+                details:
+                  "Designed and implemented an enterprise-grade virtual lab environment using Cisco Packet Tracer and GNS3. Configured VLANs, OSPF/EIGRP routing protocols, and SSH hardening to simulate real-world networking scenarios and CCNA exam objectives.",
+              },
+            ].map((proj, i) => (
+              <div
+                key={i}
+                className="group border-b border-gray-800 pb-8 hover:border-orange-500 transition-colors"
+              >
+                <h4 className="text-2xl font-bold mb-3 text-orange-500">
                   {proj.title}
                 </h4>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {proj.desc}
+                <p className="text-gray-400 leading-relaxed text-lg">
+                  {proj.details}
                 </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

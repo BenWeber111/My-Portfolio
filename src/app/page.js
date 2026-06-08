@@ -172,7 +172,7 @@ export default function Home() {
           <div className="space-y-12">
             {[
               {
-                title: "MTN RAN Planning & Optimization",
+                title: "MTN RAN Planning And Optimization",
                 details:
                   "Focused on Radio Access Network (RAN) performance, utilizing Google Earth for site placement and azimuth analysis. Analyzed signal propagation and network evolution paths (GSM/3G/4G) to improve coverage density and reduce dropped calls in high-traffic sectors.",
               },
@@ -286,22 +286,38 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <form className="flex-1 flex flex-col gap-4">
+
+            {/* Contact Form */}
+            <form
+              action="https://formspree.io/f/xzdqrgqj"
+              method="POST"
+              className="flex-1 flex flex-col gap-4"
+            >
               <input
                 type="text"
+                name="name"
                 placeholder="Name"
+                required
                 className="p-3 bg-[#111] rounded border border-gray-800 focus:border-orange-500 outline-none transition"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
+                required
                 className="p-3 bg-[#111] rounded border border-gray-800 focus:border-orange-500 outline-none transition"
               />
               <textarea
+                name="message"
                 placeholder="Message"
+                required
                 className="p-3 bg-[#111] rounded border border-gray-800 h-28 focus:border-orange-500 outline-none transition"
               ></textarea>
-              <button className="bg-orange-500 hover:bg-orange-600 py-3 rounded font-bold transition">
+
+              <button
+                type="submit"
+                className="bg-orange-500 hover:bg-orange-600 py-3 rounded font-bold transition"
+              >
                 Send Message
               </button>
             </form>
